@@ -15,7 +15,6 @@ setup(
     },
     classifiers = ['Operating System :: OS Independent',
             'Programming Language :: Python :: 2.7',
-            'Programming Language :: Python :: 3.6',
             'Operating System :: MacOS :: MacOS X',
             'Operating System :: Microsoft :: Windows',
             'Operating System :: POSIX',
