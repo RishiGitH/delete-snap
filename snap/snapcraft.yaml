@@ -1,0 +1,39 @@
+name: rishi-requests-test
+version: '0.2'
+summary: 'testing app requests '
+description: |
+  test
+grade: stable # devel # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+base: core18
+
+apps:
+    rishi-requests-test:
+        command: python3 $SNAP/rishi_requests.py
+        plugs: [home, gsettings, network]
+
+parts:
+  copy-stuff:
+    plugin: dump
+    source: .
+  rishi-requests-test:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+        - libssl-dev
+        - libjpeg-dev
+        - libtiff-dev
+        - libsdl1.2-dev
+        - libnotify-dev
+        - freeglut3
+        - ibus-gtk3
+        - libwebkitgtk-3.0-0
+        - zlib1g
+        - libsm6
+        - libpulse0
+        - libslang2
+        - libsdl1.2debian
+    requirements:
+        - /root/project/requirements.txt
+
